@@ -1,7 +1,12 @@
 class ParamsController < ApplicationController
 
-  def phrase
+  def query_phrase
     input_value = params["phrase"].upcase
     render json: input_value.as_json
+  end
+
+  def seg_phrase
+    input_value = params["phrase"].upcase
+    render json: { message: "The url segment is #{input_value}." }
   end
 end
